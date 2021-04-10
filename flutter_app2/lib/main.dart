@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 //routes
  import 'package:flutter_app2/src/routes/routes.dart';
  
-void main() => runApp(MyApp());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+  runApp(MyApp());
+}
  
 class MyApp extends StatelessWidget {
   @override
